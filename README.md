@@ -1,4 +1,4 @@
-# PA3 Python Data Analysis (PANDAS)
+# PA3 - Python Data Analysis (PANDAS)
 "This repository contains Python code to solve two programming problems titled: **Problem 1** and **Problem 2**. Each problem involves the use of PANDAS for data analysis."
 
 Below is a preview of the code, but there is also a Jupyter notebook uploaded in the files section.
