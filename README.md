@@ -27,6 +27,9 @@ pd.concat([cars.head(), cars.tail()])
 - **Input:** A .csv file named `cars.csv`.
 - **Output:** The first five and last five rows of the `cars` DataFrame.
 
+<img width="606" alt="Screenshot 2024-09-17 at 12 05 00 AM" src="https://github.com/user-attachments/assets/d9e6914b-3690-4b27-b52e-5e5f6d81c1f8">
+
+
 ---
 
 ## Problem 2:
@@ -75,6 +78,9 @@ print(cars[cars['Model'].isin(models)][['Model', 'cyl', 'gear']])
   - The row with the 'Model' of 'Mazda RX4'.
   - The number of cylinders in the car model 'Camaro Z28'.
   - The number of cylinders and gear type for the car models 'Mazda RX4 Wag', 'Ford Pantera L', and 'Honda Civic'.
+
+<img width="596" alt="Screenshot 2024-09-17 at 12 05 22 AM" src="https://github.com/user-attachments/assets/8e88f651-d208-499b-9d26-aafca4b83901">
+
 
 
 
