@@ -18,9 +18,28 @@ import pandas as pd
 #Load the 'cars.csv' file into a DataFrame named 'cars'
 cars = pd.read_csv('cars.csv')
 
-#Display the concatenated first 5 rows (head) and last 5 rows (tail) of the DataFrame
-#'cars.head()' returns the first five rows and cars.tail() returns the last 5 rows
-pd.concat([cars.head(), cars.tail()])
+#a. Display the first five rows with odd-numbered columns (1, 3, 5, 7...)
+#Select the first 5 rows and every second column starting from index 1
+print("First five rows with odd-numbered columns:")
+print(cars.iloc[:5, 1::2])
+
+#b. Display the row that contains the ‘Model’ of ‘Mazda RX4’
+#Filter the DataFrame to include only the row where the 'Model' column matches 'Mazda RX4'
+print("\nRow with Model 'Mazda RX4':")
+print(cars[cars['Model'] == 'Mazda RX4'])
+
+#c. How many cylinders (‘cyl’) does the car model ‘Camaro Z28’ have?
+#Use .loc to filter the row where 'Model' is 'Camaro Z28' and select the 'cyl' column
+#Since the result is a Series, use .iloc[0] to get the scalar value for the cylinders
+print(f"\nCylinders in 'Camaro Z28':")
+print(f"{cars.loc[cars['Model'] == 'Camaro Z28', 'cyl'].iloc[0]} cylinders")
+
+#d. Determine how many cylinders (‘cyl’) and what gear type (‘gear’) the car models ‘Mazda RX4 Wag’, ‘Ford Pantera L’, and ‘Honda Civic’ have
+#Use .isin() to filter rows where the 'Model' matches any of the specified models
+#Select the 'Model', 'cyl', and 'gear' columns to display
+print("\nCylinders and gear type for selected models:")
+models = ['Mazda RX4 Wag', 'Ford Pantera L', 'Honda Civic']
+print(cars[cars['Model'].isin(models)][['Model', 'cyl', 'gear']])
 ```
 
 ### Input and Output Example
@@ -31,9 +50,11 @@ pd.concat([cars.head(), cars.tail()])
 
 ## Problem 2:
 ### Overview
-This problem involves analyzing a dataset contained in a .csv file. The process includes:
-- Loading the .csv file into a pandas DataFrame named `cars`
-- Displaying both the first five and last five rows of the DataFrame
+This task involves data extraction from a pandas DataFrame using subsetting, slicing, and indexing techniques. The operations include:
+- Displaying the first five rows with odd-numbered columns.
+- Extracting the row with the car model ‘Mazda RX4’.
+- Determining the number of cylinders in the car model ‘Camaro Z28’.
+- Displaying the cylinders and gear type for the car models ‘Mazda RX4 Wag’, ‘Ford Pantera L’, and ‘Honda Civic’.
 
 ### Code Implementation
 ``` python
@@ -49,7 +70,11 @@ pd.concat([cars.head(), cars.tail()])
 
 ### Input and Output Example
 - **Input:** A .csv file named `cars.csv`.
-- **Output:** The first five and last five rows of the `cars` DataFrame.
+- **Output:**
+  - The first five rows with odd-numbered columns of the `cars` DataFrame.
+  - The row with the 'Model' of 'Mazda RX4'.
+  - The number of cylinders in the car model 'Camaro Z28'.
+  - The number of cylinders and gear type for the car models 'Mazda RX4 Wag', 'Ford Pantera L', and 'Honda Civic'.
 
 
 
